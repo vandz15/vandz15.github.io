@@ -10,9 +10,10 @@
     <li>Lorem Ipsum</li>
 </ul>
 
-<p>Website ini dibuat menggunakan Framework Laravel 9 dengan tambahan package-package lain, seperti :<br><br>
-1) Bootstrap 5,<br>
-2) Laraberg - Wordpress Gutenberg Editor
+<p>Website ini dibuat menggunakan Framework Laravel v10.44.0 dengan tambahan package-package lain, seperti :<br><br>
+1) VITE v5.1.3,<br>
+2) Bootstrap v5,<br>
+3) Laraberg - Wordpress Gutenberg Editor
 </p>
 
 Cara menjalankan Website :
