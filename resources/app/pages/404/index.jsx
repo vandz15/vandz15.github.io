@@ -1,4 +1,4 @@
-export default function Error404() {
+export default function Index() {
     return (
         <div className="block relative">
             404 - Page Not Found

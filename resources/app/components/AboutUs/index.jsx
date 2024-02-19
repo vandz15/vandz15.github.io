@@ -1,4 +1,4 @@
-export default function AboutUs() {
+export default function Index() {
   return (
     <section id="aboutus" className="aboutus angle">
       <div className="container">

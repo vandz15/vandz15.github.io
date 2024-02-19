@@ -1,4 +1,4 @@
-export default function Header() {
+export default function Index() {
     return (
       <header id="home" className="welcome-hero-area">
             <div className="header-top-area">

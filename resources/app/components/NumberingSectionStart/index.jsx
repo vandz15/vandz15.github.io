@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function NumberingSectionStart() {
+export default function Index() {
     return (
         <section className="numbering-wrapper">
     <div className="container">

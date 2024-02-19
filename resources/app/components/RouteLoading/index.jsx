@@ -1,4 +1,4 @@
-export default function RouteLoading() {
+export default function Index() {
     return (
          <div id="loader"></div>
     );
