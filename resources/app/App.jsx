@@ -1,13 +1,12 @@
-import React from 'react';
-import { RouterProvider } from 'react-router-dom';
-import router from './router';
+import React, { Fragment } from "react";
+import { RouterProvider } from "react-router-dom";
+import router from "./router";
 
 function App() {
     return (
-        <div className="block relative">
-            <RouterProvider router={router}>
-            </RouterProvider>
-        </div>
+        <Fragment>
+            <RouterProvider router={router}></RouterProvider>
+        </Fragment>
     );
 }
 

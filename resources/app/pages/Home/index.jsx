@@ -25,6 +25,18 @@ export default function Index() {
                 document.body.appendChild(jqueryScript);
             });
 
+            // Memuat skrip Bootstrap
+            const bootstrapScript = document.createElement("script");
+            bootstrapScript.src = "assets/bootstrap/js/bootstrap.min.js";
+            bootstrapScript.async = true;
+
+            // Menunggu Bootstrap dimuat
+            await new Promise((resolve, reject) => {
+                bootstrapScript.onload = resolve;
+                bootstrapScript.onerror = reject;
+                document.body.appendChild(bootstrapScript);
+            });
+
             // Memuat skrip Owl Carousel
             const owlCarouselScript = document.createElement("script");
             owlCarouselScript.src = "assets/owl-carousel/js/owl.carousel.js";
@@ -37,9 +49,8 @@ export default function Index() {
                 document.body.appendChild(owlCarouselScript);
             });
 
-            // Setelah Owl Carousel dimuat, memuat skrip lainnya
+            // Setelah semua skrip dimuat, memuat skrip lainnya
             const otherScripts = [
-                "assets/bootstrap/js/bootstrap.min.js",
                 "assets/easing/jquery.easing.min.js",
                 "assets/jquery/jquery.animateNumber.min.js",
                 "assets/jquery/plugins.js",

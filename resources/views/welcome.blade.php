@@ -7,16 +7,17 @@
 
   <title>Sinergy Mechanic Electrical</title>
 
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.ico">
+
   @viteReactRefresh
 
   @vite("resources/app/index.jsx")
 
-  <!-- Favicon -->
-  <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.ico">
+
 </head>
 
-<body>
-  <div id="root"></div>
-</body>
+<body id="root"></body>
 
 </html>
