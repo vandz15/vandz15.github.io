@@ -4,18 +4,18 @@
 
 <hr>
 <p>
-    Web ini mempunyai fitur : 
+    Website ini mempunyai fitur : 
 </p>
 <ul>
     <li>Lorem Ipsum</li>
 </ul>
 
-<p>Aplikasi ini dibuat menggunakan Framework Laravel 9 dengan tambahan package-package lain, seperti :<br><br>
+<p>Website ini dibuat menggunakan Framework Laravel 9 dengan tambahan package-package lain, seperti :<br><br>
 1) Bootstrap 5,<br>
 2) Laraberg - Wordpress Gutenberg Editor
 </p>
 
-Cara menjalankan Aplikasi :
+Cara menjalankan Website :
 
 -   Simpan Project di /htdocs (kalau pake xampp)
 -   jalankan "composer install" di dalam terminal/cmd
