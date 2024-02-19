@@ -4,11 +4,11 @@ export default function Index() {
             <div className="container">
                 <div className="section-title">
                     <h2>
-                        Our Team <span className="title-border-white"></span>
+                        Tim Kami <span className="title-border-white"></span>
                     </h2>
                 </div>
             </div>
-            <div className="container">
+            <div className="container" data-aos="slide-up" data-aos-delay="0">
                 <div id="our-team" className="owl-carousel owl-theme">
                     <div className="item">
                         <div className="corporate-team">

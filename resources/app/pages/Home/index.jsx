@@ -7,8 +7,11 @@ import OurTeam from "@/components/OurTeam";
 import Services from "@/components/Services";
 import CallToAction from "@/components/CallToAction";
 import TestimonialsWrapper from "@/components/TestimonialsWrapper";
+import OurGallery from "@/components/OurGallery";
 import ContactUs from "@/components/ContactUs";
 import Footer from "@/components/Footer";
+
+import { FloatingWhatsApp } from "react-floating-whatsapp";
 
 export default function Index() {
     useEffect(() => {
@@ -84,8 +87,24 @@ export default function Index() {
             <Services />
             <CallToAction />
             <TestimonialsWrapper />
+            <OurGallery />
             <ContactUs />
             <Footer />
+
+            <FloatingWhatsApp
+                avatar="/assets/images/logo.png"
+                phoneNumber="6281228883616"
+                accountName="Sinergy Mechanical Electrical"
+                chatMessage="Hi, Ada yang bisa kami bantu?"
+                statusMessage=""
+                darkMode={true}
+                allowEsc={true}
+                allowClickAway
+                notification
+                notificationDelay={60000} // 1 minute
+                notificationSound
+                styles={{ position: "fixed", bottom: "15px" }}
+            />
         </Fragment>
     );
 }

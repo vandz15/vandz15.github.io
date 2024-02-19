@@ -4,12 +4,12 @@ export default function Index() {
             <div className="container">
                 <div className="section-title">
                     <h2>
-                        Client Testimonials
+                        Testimoni Klien
                         <span className="title-border-white"></span>
                     </h2>
                 </div>
             </div>
-            <div className="container">
+            <div className="container" data-aos="slide-up" data-aos-delay="0">
                 <div id="our-testimonials" className="owl-carousel owl-theme">
                     <div className="item">
                         <div className="testimonials-inner">

@@ -4,13 +4,17 @@ export default function Index() {
             <div className="container">
                 <div className="section-title">
                     <h2>
-                        Contact Us<span className="title-border-white"></span>
+                        Kontak Kami<span className="title-border-white"></span>
                     </h2>
                 </div>
             </div>
             <div className="container">
                 <div className="row">
-                    <div className="col-md-6 col-sm-12">
+                    <div
+                        className="col-md-6 col-sm-12"
+                        data-aos="slide-right"
+                        data-aos-delay="0"
+                    >
                         <div className="contact-form">
                             <form method="post" id="contact-form">
                                 <div className="row">
@@ -20,8 +24,9 @@ export default function Index() {
                                             name="name"
                                             id="name"
                                             required
-                                            placeholder="Name"
+                                            placeholder="Nama"
                                             type="text"
+                                            autoComplete="off"
                                         />
                                     </div>
                                     <div className="col-sm-6">
@@ -30,8 +35,9 @@ export default function Index() {
                                             name="messageForm"
                                             required
                                             id="messageForm"
-                                            placeholder="Subject"
+                                            placeholder="Subjek"
                                             type="text"
+                                            autoComplete="off"
                                         />
                                     </div>
                                     <div className="col-sm-6">
@@ -40,8 +46,9 @@ export default function Index() {
                                             name="phone"
                                             required
                                             id="phone"
-                                            placeholder="Phone"
-                                            type="text"
+                                            placeholder="No Hp"
+                                            type="tel"
+                                            autoComplete="off"
                                         />
                                     </div>
                                     <div className="col-sm-6">
@@ -51,7 +58,8 @@ export default function Index() {
                                             required
                                             id="email"
                                             placeholder="Email"
-                                            type="text"
+                                            type="email"
+                                            autoComplete="off"
                                         />
                                     </div>
                                 </div>
@@ -62,11 +70,13 @@ export default function Index() {
                                             name="message"
                                             id="message"
                                             rows="6"
-                                            placeholder="Your Message"
+                                            placeholder="Pesan Anda"
+                                            required
+                                            autoComplete="off"
                                         ></textarea>
                                         <div className="submit-area">
                                             <button className="btn-one">
-                                                Send Message
+                                                Kirim Pesan
                                             </button>
                                         </div>
                                     </div>
@@ -74,7 +84,11 @@ export default function Index() {
                             </form>
                         </div>
                     </div>
-                    <div className="col-md-6 col-sm-12">
+                    <div
+                        className="col-md-6 col-sm-12"
+                        data-aos="slide-left"
+                        data-aos-delay="0"
+                    >
                         <div className="google-map">
                             <iframe
                                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.3281688500397!2d106.67744197446777!3d-6.220385293767611!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f980969e7c77%3A0xab0ca9146cb71ed1!2sZM%20Futsal!5e0!3m2!1sid!2sid!4v1708329630759!5m2!1sid!2sid"
@@ -84,20 +98,36 @@ export default function Index() {
                             <div className="map-content">
                                 <ul>
                                     <li>
-                                        <i className="fa fa-home"></i>3567 New
-                                        Alaska, United States
+                                        <i className="fa fa-home"></i>12345
+                                        Graha Raya, Tangerang
                                     </li>
                                     <li>
-                                        <i className="fa fa-clock-o"></i>9.00 am
-                                        - 5.00 pm
+                                        <i className="fa fa-clock-o"></i>24/7
+                                        Layanan
                                     </li>
                                     <li>
-                                        <i className="fa fa-phone"></i>Phone :
-                                        +012 345 6789{" "}
+                                        <i className="fa fa-phone"></i>Telepon :{" "}
+                                        <a href="tel:+6281228883616">
+                                            081228883616
+                                        </a>{" "}
+                                    </li>
+                                    <li>
+                                        <i className="fa fa-whatsapp"></i>
+                                        Whatsapp :{" "}
+                                        <a
+                                            href="https://wa.me/6281228883616/?text=Hi%2C%20Saya%20memerlukan%20bantuan%20untuk%20pemeliharaan%20listrik%20simetric.com"
+                                            target="_blank"
+                                        >
+                                            081228883616
+                                        </a>{" "}
                                     </li>
                                     <li>
                                         <i className="fa fa-envelope"></i>Email
-                                        : info@sbtechnosoft.com,
+                                        :{" "}
+                                        <a href="mailto:sales@simetric.com">
+                                            sales@simetric.com
+                                        </a>
+                                        ,
                                     </li>
                                 </ul>
                             </div>
