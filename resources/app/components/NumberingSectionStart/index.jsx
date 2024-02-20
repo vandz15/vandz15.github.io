@@ -1,6 +1,30 @@
-import React, { Fragment } from "react";
+import React, { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { getListAreaLayanan } from "@/redux/action/areaLayanan/creator";
+import { getListNumberLayanan } from "@/redux/action/numberLayanan/creator";
 
 export default function Index() {
+    const numberLayananList = useSelector(
+        (state) => state.numberLayanan.numberLayananList
+    );
+    const areaLayananList = useSelector(
+        (state) => state.areaLayanan.areaLayananList
+    );
+    const dispatch = useDispatch();
+
+    const fetchNumberLayanan = async () => {
+        dispatch(getListNumberLayanan());
+    };
+
+    const fetchAreaLayanan = async () => {
+        dispatch(getListAreaLayanan());
+    };
+
+    useEffect(() => {
+        fetchNumberLayanan();
+        fetchAreaLayanan();
+    }, []);
+
     return (
         <section className="numbering-wrapper">
             <div className="container">
@@ -12,55 +36,57 @@ export default function Index() {
                     >
                         <div className="number-services">
                             <h3>
-                                <span className="size">6</span>
+                                <span className="size">
+                                    {numberLayananList?.tahun_pengalaman}
+                                </span>
                                 <span className="total-text">
                                     <span className="text">Tahun </span>
                                     <span className="big-text">Pengalaman</span>
                                 </span>
                             </h3>
                             <p className="line">
-                                Lorem ipsum ipsum ipsum dolor sit amet,
-                                adipiscing. Lorem ipsum dolor sit amet,
-                                consectetuer adipiscing. Lorem ipsum ipsum ipsum
-                                dolor sit em amet, consectetuer adipiscing.
+                                {numberLayananList?.description_pengalaman}
                             </p>
                             <div className="row">
                                 <div className="col-sm-4">
                                     <div className="single-section">
                                         <i
-                                            className="fa fa-lightbulb-o"
+                                            className="fa fa-certificate"
                                             aria-hidden="true"
                                         ></i>
                                         <h3>Certification</h3>
                                         <p>
-                                            Lorem ipsum ipsuiscing. Lorem
-                                            ipsuipsum adipiscing.
+                                            {
+                                                numberLayananList?.certification_description
+                                            }
                                         </p>
                                     </div>
                                 </div>
                                 <div className="col-sm-4">
                                     <div className="single-section">
                                         <i
-                                            className="fa fa-lightbulb-o"
+                                            className="fa fa-clock-o"
                                             aria-hidden="true"
                                         ></i>
-                                        <h3>24/7 Service</h3>
+                                        <h3>24/7 Layanan</h3>
                                         <p>
-                                            Lorem ipsum ipsuiscing. Lorem
-                                            ipsuipsum adipiscing.
+                                            {
+                                                numberLayananList?.operasional_description
+                                            }
                                         </p>
                                     </div>
                                 </div>
                                 <div className="col-sm-4">
                                     <div className="single-section">
                                         <i
-                                            className="fa fa-lightbulb-o"
+                                            className="fa fa-money"
                                             aria-hidden="true"
                                         ></i>
-                                        <h3>Fair Price</h3>
+                                        <h3>Harga Wajar</h3>
                                         <p>
-                                            Lorem ipsum ipsuiscing. Lorem
-                                            ipsuipsum adipiscing.
+                                            {
+                                                numberLayananList?.harga_wajar_description
+                                            }
                                         </p>
                                     </div>
                                 </div>
@@ -80,83 +106,42 @@ export default function Index() {
                             </div>
                         </div>
                         <div className="row">
-                            <div className="col-sm-4">
-                                <div className="counter">
-                                    <div className="icon">
-                                        <span className="lnr lnr-location"></span>
+                            {areaLayananList?.slice(0, 3).map((item, x) => (
+                                <div className="col-sm-4" key={item?.id || x}>
+                                    <div className="counter">
+                                        <div className="icon">
+                                            <span className="lnr lnr-location"></span>
+                                        </div>
+                                        <div
+                                            className="number animateNumber"
+                                            data-num=""
+                                        >
+                                            {" "}
+                                            <span>{item?.title}</span>
+                                        </div>
+                                        {/* <p>Workers Employed</p> */}
                                     </div>
-                                    <div
-                                        className="number animateNumber"
-                                        data-num="999"
-                                    >
-                                        {" "}
-                                        <span>Jakarta</span>
-                                    </div>
-                                    {/* <p>Workers Employed</p> */}
                                 </div>
-                            </div>
-                            <div className="col-sm-4">
-                                <div className="counter">
-                                    <div className="icon">
-                                        <span className="lnr lnr-location"></span>
-                                    </div>
-                                    <div
-                                        className="number animateNumber"
-                                        data-num="7200"
-                                    >
-                                        {" "}
-                                        <span>Bogor</span>
-                                    </div>
-                                    {/* <p>Hours Worked</p> */}
-                                </div>
-                            </div>
-                            <div className="col-sm-4">
-                                <div className="counter">
-                                    <div className="icon">
-                                        <span className="lnr lnr-location"></span>
-                                    </div>
-                                    <div
-                                        className="number animateNumber"
-                                        data-num="7200"
-                                    >
-                                        {" "}
-                                        <span>Depok</span>
-                                    </div>
-                                    {/* <p>Hours Worked</p> */}
-                                </div>
-                            </div>
+                            ))}
                         </div>
                         <div className="d-flex justify-content-center row">
-                            <div className="col-sm-4">
-                                <div className="counter">
-                                    <div className="icon">
-                                        <span className="lnr lnr-location"></span>
+                            {areaLayananList?.slice(3, 5).map((item, x) => (
+                                <div className="col-sm-4" key={item?.id || x}>
+                                    <div className="counter">
+                                        <div className="icon">
+                                            <span className="lnr lnr-location"></span>
+                                        </div>
+                                        <div
+                                            className="number animateNumber"
+                                            data-num="99"
+                                        >
+                                            {" "}
+                                            <span>{item?.title}</span>
+                                        </div>
+                                        {/* <p>Awards Won</p> */}
                                     </div>
-                                    <div
-                                        className="number animateNumber"
-                                        data-num="1057"
-                                    >
-                                        {" "}
-                                        <span>Bekasi</span>
-                                    </div>
-                                    {/* <p>Awards Won</p> */}
                                 </div>
-                            </div>
-                            <div className="col-sm-4">
-                                <div className="counter">
-                                    <div className="icon">
-                                        <span className="lnr lnr-location"></span>
-                                    </div>
-                                    <div
-                                        className="number animateNumber"
-                                        data-num="9999"
-                                    >
-                                        {" "}
-                                        <span>Tangerang</span>
-                                    </div>
-                                    {/* <p>Projects Completed</p> */}
-                                </div>
-                            </div>
+                            ))}
                         </div>
                     </div>
                 </div>

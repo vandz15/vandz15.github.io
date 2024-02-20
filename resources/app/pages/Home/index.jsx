@@ -103,7 +103,11 @@ export default function Index() {
                 notification
                 notificationDelay={60000} // 1 minute
                 notificationSound
-                styles={{ position: "fixed", bottom: "15px" }}
+                styles={{
+                    position: "fixed",
+                    bottom: "15px",
+                    height: "0px !important",
+                }}
             />
         </Fragment>
     );
