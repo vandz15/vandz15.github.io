@@ -86,7 +86,7 @@ export default function Index() {
                                         className="smoth-scroll"
                                         href="#testimonials"
                                     >
-                                        Testimonial
+                                        Testimoni
                                     </a>
                                 </li>
                                 <li>

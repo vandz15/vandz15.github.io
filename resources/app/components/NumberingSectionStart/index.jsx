@@ -40,7 +40,7 @@ export default function Index() {
                                     {numberLayananList?.tahun_pengalaman}
                                 </span>
                                 <span className="total-text">
-                                    <span className="text">Tahun </span>
+                                    <span className="text">Tahun Lebih</span>
                                     <span className="big-text">Pengalaman</span>
                                 </span>
                             </h3>

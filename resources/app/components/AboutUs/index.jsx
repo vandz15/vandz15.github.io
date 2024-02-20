@@ -1,4 +1,28 @@
+import React, { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { getListTentangKami } from "@/redux/action/tentangKami/creator";
+import { getListLayanan } from "@/redux/action/layanan/creator";
+
 export default function Index() {
+    const tentangKamiList = useSelector(
+        (state) => state.tentangKami.tentangKamiList
+    );
+    const layananList = useSelector((state) => state.layanan.layananList);
+    const dispatch = useDispatch();
+
+    const fetchTentangKami = async () => {
+        dispatch(getListTentangKami());
+    };
+
+    const fetchLayananList = async () => {
+        dispatch(getListLayanan());
+    };
+
+    useEffect(() => {
+        fetchTentangKami();
+        fetchLayananList();
+    }, []);
+
     return (
         <section id="aboutus" className="aboutus angle">
             <div className="container">
@@ -15,14 +39,10 @@ export default function Index() {
                         data-aos-delay="0"
                     >
                         <div className="about-img">
-                            {" "}
-                            <a
-                                href="https://wa.me/6281228883616/?text=Hi%2C%20Saya%20memerlukan%20bantuan%20untuk%20pemeliharaan%20listrik%20simetric.com"
-                                target="_blank"
-                            >
-                                {" "}
-                                <img src="assets/images/about-us.jpg" alt="" />
-                            </a>{" "}
+                            <img
+                                src={tentangKamiList?.image}
+                                alt={tentangKamiList?.alt}
+                            />
                         </div>
                     </div>
                     <div
@@ -31,108 +51,25 @@ export default function Index() {
                         data-aos-delay="0"
                     >
                         <div className="about-text">
-                            <p>
-                                <b className="text-theme">
-                                    Sinergy Mechanic Electrical
-                                </b>{" "}
-                                merupakan Team Teknisi Listrik atau Tukang
-                                Listrik Panggilan yang melayani Jasa Perbaikan
-                                Listrik untuk Rumah, Ruko, Kantor & Industri,
-                                seperti:
-                            </p>
+                            <p
+                                dangerouslySetInnerHTML={{
+                                    __html: tentangKamiList?.description,
+                                }}
+                            ></p>
                             <ul className="about-list hidden-sm">
-                                <li>
-                                    <a
-                                        href="https://wa.me/6281228883616/?text=Hi%2C%20Saya%20memerlukan%20bantuan%20untuk%20pemeliharaan%20listrik%20simetric.com"
-                                        target="_blank"
+                                {layananList?.map((item, x) => (
+                                    <li
+                                        key={item?.id || x}
+                                        className="nav navbar-nav"
                                     >
-                                        Perbaikan Korsleting & Hansleting
-                                    </a>
-                                </li>
-                                <li>
-                                    <a
-                                        href="https://wa.me/6281228883616/?text=Hi%2C%20Saya%20memerlukan%20bantuan%20untuk%20pemeliharaan%20listrik%20simetric.com"
-                                        target="_blank"
-                                    >
-                                        Perbaikan Listrik Mati, sebagian
-                                        Jalur/Lantai
-                                    </a>
-                                </li>
-                                <li>
-                                    <a
-                                        href="https://wa.me/6281228883616/?text=Hi%2C%20Saya%20memerlukan%20bantuan%20untuk%20pemeliharaan%20listrik%20simetric.com"
-                                        target="_blank"
-                                    >
-                                        Perbaikan Grounding System
-                                    </a>
-                                </li>
-                                <li>
-                                    <a
-                                        href="https://wa.me/6281228883616/?text=Hi%2C%20Saya%20memerlukan%20bantuan%20untuk%20pemeliharaan%20listrik%20simetric.com"
-                                        target="_blank"
-                                    >
-                                        Perakitan Panel Listrik
-                                    </a>
-                                </li>
-
-                                <li>
-                                    <a
-                                        href="https://wa.me/6281228883616/?text=Hi%2C%20Saya%20memerlukan%20bantuan%20untuk%20pemeliharaan%20listrik%20simetric.com"
-                                        target="_blank"
-                                    >
-                                        Power Balance
-                                    </a>
-                                </li>
-
-                                <li>
-                                    <a
-                                        href="https://wa.me/6281228883616/?text=Hi%2C%20Saya%20memerlukan%20bantuan%20untuk%20pemeliharaan%20listrik%20simetric.com"
-                                        target="_blank"
-                                    >
-                                        Pasang Instalasi Baru
-                                    </a>
-                                </li>
-                                <li>
-                                    <a
-                                        href="https://wa.me/6281228883616/?text=Hi%2C%20Saya%20memerlukan%20bantuan%20untuk%20pemeliharaan%20listrik%20simetric.com"
-                                        target="_blank"
-                                    >
-                                        Instalasi Panel
-                                    </a>
-                                </li>
-                                <li>
-                                    <a
-                                        href="https://wa.me/6281228883616/?text=Hi%2C%20Saya%20memerlukan%20bantuan%20untuk%20pemeliharaan%20listrik%20simetric.com"
-                                        target="_blank"
-                                    >
-                                        Tambah Daya
-                                    </a>
-                                </li>
-                                <li>
-                                    <a
-                                        href="https://wa.me/6281228883616/?text=Hi%2C%20Saya%20memerlukan%20bantuan%20untuk%20pemeliharaan%20listrik%20simetric.com"
-                                        target="_blank"
-                                    >
-                                        Penerbitan Nidi dan Slo
-                                    </a>
-                                </li>
-                                <li>
-                                    <a
-                                        href="https://wa.me/6281228883616/?text=Hi%2C%20Saya%20memerlukan%20bantuan%20untuk%20pemeliharaan%20listrik%20simetric.com"
-                                        target="_blank"
-                                    >
-                                        Perbaikan kWh Meter Periksa
-                                    </a>
-                                </li>
-                                <li>
-                                    <a
-                                        href="https://wa.me/6281228883616/?text=Hi%2C%20Saya%20memerlukan%20bantuan%20untuk%20pemeliharaan%20listrik%20simetric.com"
-                                        target="_blank"
-                                    >
-                                        Peremajaan Kabel atau Revisi Instalasi
-                                        Listrik
-                                    </a>
-                                </li>
+                                        <a
+                                            href="#services"
+                                            className="smoth-scroll"
+                                        >
+                                            {item?.title}
+                                        </a>
+                                    </li>
+                                ))}
                             </ul>
                         </div>
                     </div>
