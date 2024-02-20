@@ -22,6 +22,8 @@
 
 </head>
 
-<body id="root"></body>
+<body>
+  <div id="app" class="h-100"></div>
+</body>
 
 </html>

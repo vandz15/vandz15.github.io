@@ -1,4 +1,20 @@
+import React, { Fragment, useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { getListBanners } from "@/redux/action/banners/creator";
+
 export default function Index() {
+    const bannersList = useSelector((state) => state.banners.bannersList);
+    const dispatch = useDispatch();
+
+    const fetchBannersList = async () => {
+        dispatch(getListBanners());
+    };
+
+    useEffect(() => {
+        fetchBannersList();
+    }, []);
+    console.log("bannersList", bannersList);
+
     return (
         <header id="home" className="welcome-hero-area">
             <div className="header-top-area">
@@ -93,145 +109,89 @@ export default function Index() {
                     className="carousel slide carousel-fade"
                     data-ride="carousel"
                 >
-                    <ol className="carousel-indicators">
-                        <li
-                            data-target="#welcome-slide-carousel"
-                            data-slide-to="0"
-                            className="active"
-                        ></li>
-                        <li
-                            data-target="#welcome-slide-carousel"
-                            data-slide-to="1"
-                        ></li>
-                        <li
-                            data-target="#welcome-slide-carousel"
-                            data-slide-to="2"
-                        ></li>
-                    </ol>
+                    {bannersList?.length > 1 && (
+                        <ol className="carousel-indicators">
+                            <li
+                                data-target="#welcome-slide-carousel"
+                                data-slide-to="0"
+                                className="active"
+                            ></li>
+                            <li
+                                data-target="#welcome-slide-carousel"
+                                data-slide-to="1"
+                            ></li>
+                            <li
+                                data-target="#welcome-slide-carousel"
+                                data-slide-to="2"
+                            ></li>
+                        </ol>
+                    )}
                     <div className="carousel-inner" role="listbox">
                         {/* <!-- Start Single Slider Item --> */}
-                        <div className="item active">
-                            <div className="single-slide-item slide-1">
-                                <div className="single-slide-item-table">
-                                    <div className="single-slide-item-table-cell">
-                                        <div className="container">
-                                            <div className="row">
-                                                <div className="col-md-12">
-                                                    <h1>
-                                                        Layanan{" "}
-                                                        <span>Listrik</span>{" "}
-                                                        Terbaik
-                                                    </h1>
-                                                    <p>
-                                                        Kami Menyediakan Teknisi
-                                                        Listrik Profesional
-                                                        untuk daerah{" "}
-                                                        <b className="text-theme">
-                                                            JABODETABEK
-                                                        </b>
-                                                    </p>
-                                                    <a
-                                                        className="btn-one smoth-scroll"
-                                                        href="https://wa.me/6281228883616/?text=Hi%2C%20Saya%20memerlukan%20bantuan%20untuk%20pemeliharaan%20listrik%20simetric.com"
-                                                        target="_blank"
-                                                    >
-                                                        Whatsapp Kami
-                                                    </a>
+                        {bannersList?.map((item, x) => (
+                            <div
+                                className={`item ${x === 0 ? "active" : ""}`}
+                                key={item?.id || x}
+                            >
+                                <div
+                                    className={`single-slide-item slide-${
+                                        x + 1
+                                    }`}
+                                    style={{
+                                        backgroundImage: `url(${item?.image})`,
+                                    }}
+                                >
+                                    <div className="single-slide-item-table">
+                                        <div className="single-slide-item-table-cell">
+                                            <div className="container">
+                                                <div className="row">
+                                                    <div className="col-md-12">
+                                                        <h1
+                                                            dangerouslySetInnerHTML={{
+                                                                __html: item?.title,
+                                                            }}
+                                                        ></h1>
+                                                        <p
+                                                            dangerouslySetInnerHTML={{
+                                                                __html: item?.description,
+                                                            }}
+                                                        ></p>
+                                                        <a
+                                                            className="btn-one smoth-scroll"
+                                                            href={item?.link_wa}
+                                                            target="_blank"
+                                                        >
+                                                            {item?.title_wa}
+                                                        </a>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        ))}
                         {/* <!-- End Single Slider Item--> */}
-                        {/* <!-- Start Single Slider Item--> */}
-                        <div className="item">
-                            <div className="single-slide-item slide-2">
-                                <div className="single-slide-item-table">
-                                    <div className="single-slide-item-table-cell">
-                                        <div className="container">
-                                            <div className="row">
-                                                <div className="col-md-12">
-                                                    <h1>
-                                                        Pasang{" "}
-                                                        <span>Instalasi</span>{" "}
-                                                        Baru
-                                                    </h1>
-                                                    <p>
-                                                        Kami Menyediakan Teknisi
-                                                        Listrik Profesional
-                                                        untuk daerah{" "}
-                                                        <b className="text-theme">
-                                                            JABODETABEK
-                                                        </b>
-                                                    </p>
-                                                    <a
-                                                        className="btn-one smoth-scroll"
-                                                        href="https://wa.me/6281228883616/?text=Hi%2C%20Saya%20memerlukan%20bantuan%20untuk%20pemeliharaan%20listrik%20simetric.com"
-                                                        target="_blank"
-                                                    >
-                                                        Whatsapp Kami
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        {/* <!-- End Single Slider Item --> */}
-                        {/* <!-- Start Single Slider Item--> */}
-                        <div className="item">
-                            <div className="single-slide-item slide-3">
-                                <div className="single-slide-item-table">
-                                    <div className="single-slide-item-table-cell">
-                                        <div className="container">
-                                            <div className="row">
-                                                <div className="col-md-12">
-                                                    <h1>
-                                                        Instalasi{" "}
-                                                        <span>Panel</span>
-                                                    </h1>
-                                                    <p>
-                                                        Kami Menyediakan Teknisi
-                                                        Listrik Profesional
-                                                        untuk daerah{" "}
-                                                        <b className="text-theme">
-                                                            JABODETABEK
-                                                        </b>
-                                                    </p>
-                                                    <a
-                                                        className="btn-one smoth-scroll"
-                                                        href="https://wa.me/6281228883616/?text=Hi%2C%20Saya%20memerlukan%20bantuan%20untuk%20pemeliharaan%20listrik%20simetric.com"
-                                                        target="_blank"
-                                                    >
-                                                        Whatsapp Kami
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        {/* <!-- End Single Slider Item --> */}
-                        <a
-                            className="left welcome-control"
-                            href="#welcome-slide-carousel"
-                            role="button"
-                            data-slide="prev"
-                        >
-                            <i className="fa fa-angle-left"></i>
-                        </a>{" "}
-                        <a
-                            className="right welcome-control"
-                            href="#welcome-slide-carousel"
-                            role="button"
-                            data-slide="next"
-                        >
-                            <i className="fa fa-angle-right"></i>
-                        </a>
+                        {bannersList?.length > 1 && (
+                            <Fragment>
+                                <a
+                                    className="left welcome-control"
+                                    href="#welcome-slide-carousel"
+                                    role="button"
+                                    data-slide="prev"
+                                >
+                                    <i className="fa fa-angle-left"></i>
+                                </a>{" "}
+                                <a
+                                    className="right welcome-control"
+                                    href="#welcome-slide-carousel"
+                                    role="button"
+                                    data-slide="next"
+                                >
+                                    <i className="fa fa-angle-right"></i>
+                                </a>
+                            </Fragment>
+                        )}
                     </div>
                 </div>
             </div>

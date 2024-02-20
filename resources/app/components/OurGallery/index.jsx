@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Gallery } from "react-grid-gallery";
-import Lightbox from "yet-another-react-lightbox";
 
 export default function Index() {
     const images = [
@@ -47,15 +46,6 @@ export default function Index() {
             height: 212,
         },
     ];
-    const slides = images.map(({ original, width, height }) => ({
-        src: original,
-        width,
-        height,
-    }));
-
-    const [index, setIndex] = useState(-1);
-
-    const handleClick = (index, item) => setIndex(index);
 
     return (
         <section id="ourgallery" className="ourteam">
@@ -67,18 +57,7 @@ export default function Index() {
                 </div>
             </div>
             <div className="container">
-                <Gallery
-                    images={images}
-                    enableImageSelection={false}
-                    onClick={handleClick}
-                />
-
-                <Lightbox
-                    slides={slides}
-                    open={index >= 0}
-                    index={index}
-                    close={() => setIndex(-1)}
-                />
+                <Gallery images={images} enableImageSelection={false} />
             </div>
         </section>
     );

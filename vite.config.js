@@ -34,6 +34,9 @@ export default defineConfig((config) => {
             }),
             react(),
         ],
+        commonjsOptions: {
+            esmExternals: true,
+        },
         css: {
             preprocessorOptions: {
                 scss: {
