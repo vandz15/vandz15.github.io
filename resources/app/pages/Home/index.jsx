@@ -2,19 +2,32 @@ import React, { Fragment, useEffect } from "react";
 
 import Header from "@/components/Header";
 import NumberingSectionStart from "@/components/NumberingSectionStart";
-import AboutUs from "@/components/AboutUs";
-import OurTeam from "@/components/OurTeam";
-import Services from "@/components/Services";
+import TentangKami from "@/components/TentangKami";
+import TimKami from "@/components/TimKami";
+import Layanan from "@/components/Layanan";
 import CallToAction from "@/components/CallToAction";
-import TestimonialsWrapper from "@/components/TestimonialsWrapper";
-import OurGallery from "@/components/OurGallery";
-import ContactUs from "@/components/ContactUs";
+import Testimoni from "@/components/Testimoni";
+import Galeri from "@/components/Galeri";
+import KontakKami from "@/components/KontakKami";
 import Footer from "@/components/Footer";
 
 import { FloatingWhatsApp } from "react-floating-whatsapp";
 
+import { useSelector, useDispatch } from "react-redux";
+import { getListFloatingWhatsApp } from "@/redux/action/floatingWhatsApp/creator";
+
 export default function Index() {
+    const floatingWhatsAppList = useSelector(
+        (state) => state.floatingWhatsApp.floatingWhatsAppList
+    );
+    const dispatch = useDispatch();
+
+    const fetchFloatingWhatsApp = async () => {
+        dispatch(getListFloatingWhatsApp());
+    };
+
     useEffect(() => {
+        fetchFloatingWhatsApp();
         const loadScripts = async () => {
             // Memuat jQuery secara asinkron
             const jqueryScript = document.createElement("script");
@@ -82,21 +95,21 @@ export default function Index() {
         <Fragment>
             <Header />
             <NumberingSectionStart />
-            <AboutUs />
-            <OurTeam />
-            <Services />
+            <TentangKami />
+            <TimKami />
+            <Layanan />
             <CallToAction />
-            <TestimonialsWrapper />
-            <OurGallery />
-            <ContactUs />
+            <Testimoni />
+            <Galeri />
+            <KontakKami />
             <Footer />
 
             <FloatingWhatsApp
-                avatar="/assets/images/logo.png"
-                phoneNumber="6281228883616"
-                accountName="Sinergy Mechanical Electrical"
-                chatMessage="Hi, Ada yang bisa kami bantu?"
-                statusMessage=""
+                avatar={floatingWhatsAppList?.avatar}
+                phoneNumber={floatingWhatsAppList?.phone_number}
+                accountName={floatingWhatsAppList?.account_name}
+                chatMessage={floatingWhatsAppList?.chat_message}
+                statusMessage={floatingWhatsAppList?.status_message}
                 darkMode={true}
                 allowEsc={true}
                 allowClickAway
