@@ -1,19 +1,25 @@
 import React, { Fragment, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { getListLogos } from "@/redux/action/logos/creator";
 import { getListBanners } from "@/redux/action/banners/creator";
 
 export default function Index() {
+    const logosList = useSelector((state) => state.logos.logosList);
     const bannersList = useSelector((state) => state.banners.bannersList);
     const dispatch = useDispatch();
+
+    const fetchLogos = async () => {
+        dispatch(getListLogos());
+    };
 
     const fetchBannersList = async () => {
         dispatch(getListBanners());
     };
 
     useEffect(() => {
+        fetchLogos();
         fetchBannersList();
     }, []);
-    console.log("bannersList", bannersList);
 
     return (
         <header id="home" className="welcome-hero-area">
@@ -39,7 +45,10 @@ export default function Index() {
                                 <span className="icon-bar"></span>{" "}
                             </button>
                             <a className="navbar-brand" href="#home">
-                                <img src="assets/images/logo.png" alt="" />
+                                <img
+                                    src={logosList?.image}
+                                    alt={logosList?.alt}
+                                />
                             </a>
                             {/* <!-- Logo --> */}
                         </div>
