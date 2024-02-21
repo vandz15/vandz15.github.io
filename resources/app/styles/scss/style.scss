@@ -1657,14 +1657,13 @@ footer p {
 .cursor-pointer {
   cursor: pointer;
 }
-
+.w-100 {
+  width: 100%;
+}
 @media (max-width: 767px) {
   .navbar-toggle {
     float: initial!important;
     position: absolute;
     left: 42%;
   }
-  // .navbar-default .navbar-brand {
-  //   width: 85%; //60%;
-  // }
 }

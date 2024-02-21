@@ -2,78 +2,85 @@
   {
     "id": 1,
     "title": "Perbaikan Korsleting & Hansleting",
-    "image": "/assets/images/heating.png",
+    "image": "https://c2.staticflickr.com/9/8817/28973449265_07e3aa5d2e_b.jpg",
     "alt": "Sinergy Mechanical Electrical",
     "description": "Sinergy Mechanic Electrical menyediakan layanan Perbaikan Korsleting & Hansleting dengan Team Teknisi Listrik kami yang Profesional."
   },
   {
     "id": 2,
     "title": "Perbaikan Listrik Mati, sebagian Jalur/Lantai",
-    "image": "/assets/images/maintenance.png",
+    "image": "https://c2.staticflickr.com/9/8356/28897120681_3b2c0f43e0_b.jpg",
     "alt": "Sinergy Mechanical Electrical",
     "description": "Sinergy Mechanic Electrical menyediakan layanan Perbaikan Listrik Mati, sebagian Jalur/Lantai dengan Team Teknisi Listrik kami yang Profesional."
   },
   {
     "id": 3,
     "title": "Perbaikan Grounding System",
-    "image": "/assets/images/heating.png",
+    "image": "https://c4.staticflickr.com/9/8887/28897124891_98c4fdd82b_b.jpg",
     "alt": "Sinergy Mechanical Electrical",
     "description": "Sinergy Mechanic Electrical menyediakan layanan Perbaikan Grounding System dengan Team Teknisi Listrik kami yang Profesional."
   },
   {
     "id": 4,
     "title": "Perakitan Panel Listrik",
-    "image": "/assets/images/maintenance.png",
+    "image": "https://c2.staticflickr.com/9/8817/28973449265_07e3aa5d2e_b.jpg",
     "alt": "Sinergy Mechanical Electrical",
     "description": "Sinergy Mechanic Electrical menyediakan layanan Perakitan Panel Listrik dengan tim ahli listrik kami yang Profesional."
   },
   {
     "id": 5,
     "title": "Power Balance",
-    "image": "/assets/images/electrical.png",
+    "image": "https://c2.staticflickr.com/9/8356/28897120681_3b2c0f43e0_b.jpg",
     "alt": "Sinergy Mechanical Electrical",
     "description": "Sinergy Mechanic Electrical menyediakan layanan Power Balance dengan tim ahli listrik kami yang Profesional."
   },
   {
     "id": 6,
     "title": "Pasang Instalasi Baru",
-    "image": "/assets/images/installation.png",
+    "image": "https://c4.staticflickr.com/9/8887/28897124891_98c4fdd82b_b.jpg",
     "alt": "Sinergy Mechanical Electrical",
     "description": "Sinergy Mechanic Electrical menyediakan layanan Pasang Instalasi Baru dengan tim ahli listrik kami yang Profesional."
   },
   {
-    "id": 7,
-    "title": "Instalasi Panel",
-    "image": "/assets/images/installation.png",
+    "id": 1,
+    "title": "Perbaikan Korsleting & Hansleting",
+    "image": "https://c2.staticflickr.com/9/8817/28973449265_07e3aa5d2e_b.jpg",
     "alt": "Sinergy Mechanical Electrical",
-    "description": "Sinergy Mechanic Electrical menyediakan layanan Instalasi Panel dengan tim ahli listrik kami yang Profesional."
+    "description": "Sinergy Mechanic Electrical menyediakan layanan Perbaikan Korsleting & Hansleting dengan Team Teknisi Listrik kami yang Profesional."
   },
   {
-    "id": 8,
-    "title": "Tambah Daya",
-    "image": "assets/images/electrical.png",
+    "id": 2,
+    "title": "Perbaikan Listrik Mati, sebagian Jalur/Lantai",
+    "image": "https://c2.staticflickr.com/9/8356/28897120681_3b2c0f43e0_b.jpg",
     "alt": "Sinergy Mechanical Electrical",
-    "description": "Sinergy Mechanic Electrical menyediakan layanan Tambah Daya dengan Team Teknisi Listrik kami yang Profesional."
+    "description": "Sinergy Mechanic Electrical menyediakan layanan Perbaikan Listrik Mati, sebagian Jalur/Lantai dengan Team Teknisi Listrik kami yang Profesional."
   },
   {
-    "id": 9,
-    "title": "Penerbitan Nidi dan Slo",
-    "image": "/assets/images/electrical.png",
+    "id": 3,
+    "title": "Perbaikan Grounding System",
+    "image": "https://c4.staticflickr.com/9/8887/28897124891_98c4fdd82b_b.jpg",
     "alt": "Sinergy Mechanical Electrical",
-    "description": "Sinergy Mechanic Electrical menyediakan layanan Penerbitan Nidi dan Slo dengan tim ahli listrik kami yang Profesional."
+    "description": "Sinergy Mechanic Electrical menyediakan layanan Perbaikan Grounding System dengan Team Teknisi Listrik kami yang Profesional."
   },
   {
-    "id": 10,
-    "title": "Perbaikan kWh Meter Periksa",
-    "image": "assets/images/repair.png",
+    "id": 4,
+    "title": "Perakitan Panel Listrik",
+    "image": "https://c2.staticflickr.com/9/8817/28973449265_07e3aa5d2e_b.jpg",
     "alt": "Sinergy Mechanical Electrical",
-    "description": "Sinergy Mechanic Electrical menyediakan layanan Perbaikan kWh Meter Periksa dengan Team Teknisi Listrik kami yang Profesional."
+    "description": "Sinergy Mechanic Electrical menyediakan layanan Perakitan Panel Listrik dengan tim ahli listrik kami yang Profesional."
   },
   {
-    "id": 11,
-    "title": "Peremajaan Kabel atau Revisi Instalasi Listrik",
-    "image": "/assets/images/maintenance.png",
+    "id": 5,
+    "title": "Power Balance",
+    "image": "https://c2.staticflickr.com/9/8356/28897120681_3b2c0f43e0_b.jpg",
     "alt": "Sinergy Mechanical Electrical",
-    "description": "Sinergy Mechanic Electrical menyediakan layanan Peremajaan Kabel atau Revisi Instalasi Listrik dengan Team Teknisi Listrik kami yang Profesional."
+    "description": "Sinergy Mechanic Electrical menyediakan layanan Power Balance dengan tim ahli listrik kami yang Profesional."
+  },
+  {
+    "id": 6,
+    "title": "Pasang Instalasi Baru",
+    "image": "https://c4.staticflickr.com/9/8887/28897124891_98c4fdd82b_b.jpg",
+    "alt": "Sinergy Mechanical Electrical",
+    "description": "Sinergy Mechanic Electrical menyediakan layanan Pasang Instalasi Baru dengan tim ahli listrik kami yang Profesional."
   }
 ]

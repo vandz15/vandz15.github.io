@@ -51,7 +51,7 @@ export default function Index() {
                         <div
                             className="col-md-4 col-sm-6"
                             data-aos="flip-right"
-                            data-aos-delay="0"
+                            data-aos-delay={x + 1 + "00"}
                             key={item?.id || x}
                         >
                             <div className="single-service-item">

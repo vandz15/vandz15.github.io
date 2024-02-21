@@ -1,5 +1,5 @@
-import { initialState } from "@/redux/action/layanan/state";
-import { actionType } from "@/redux/action/layanan/type";
+import { initialState } from "@/redux/action/galeri/state";
+import { actionType } from "@/redux/action/galeri/type";
 
 export const galeriReducer = (state = initialState, action) => {
     switch (action.type) {

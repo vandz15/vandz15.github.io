@@ -30,7 +30,7 @@ export default function Index() {
                             className="item"
                             key={item?.id || x}
                             data-aos="flip-up"
-                            data-aos-delay="0"
+                            data-aos-delay={x + 1 + "00"}
                         >
                             <div className="corporate-team">
                                 <div
