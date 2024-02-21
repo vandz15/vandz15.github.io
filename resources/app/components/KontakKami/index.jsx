@@ -1,12 +1,18 @@
 import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { getListKontakKami } from "@/redux/action/kontakKami/creator";
+import { getListPembayaran } from "@/redux/action/pembayaran/creator";
 
 import Swal from "sweetalert2";
 
 export default function Index() {
+    const [copySuccess, setCopySuccess] = useState("Salin No Rek!");
+
     const kontakKamiList = useSelector(
         (state) => state.kontakKami.kontakKamiList
+    );
+    const pembayaranList = useSelector(
+        (state) => state.pembayaran.pembayaranList
     );
     const dispatch = useDispatch();
 
@@ -14,18 +20,26 @@ export default function Index() {
         dispatch(getListKontakKami());
     };
 
-    const showSwal = () => {
-        Swal.fire({
-            title: "Terima kasih atas pesan Anda. Pesan sudah terkirim.",
-            text: "",
-            icon: "success",
-            confirmButtonColor: "#f47629", // Button background color
-            iconColor: "#f47629", // Icon color
-        });
+    const fetchPembayaran = async () => {
+        dispatch(getListPembayaran());
+    };
+
+    const copyToClipBoard = async (copyMe) => {
+        try {
+            await navigator.clipboard.writeText(copyMe);
+            setCopySuccess("Berhasil disalin!");
+        } catch (err) {
+            setCopySuccess("Gagal menyalin!");
+        }
+    };
+
+    const mouseOut = async () => {
+        setCopySuccess("Salin No Rek!");
     };
 
     useEffect(() => {
         fetchKontakKami();
+        fetchPembayaran();
     }, []);
 
     return (
@@ -46,69 +60,84 @@ export default function Index() {
                     >
                         <div className="contact-form">
                             <div className="row">
-                                <div className="col-sm-6">
-                                    <input
-                                        className="con-field"
-                                        name="name"
-                                        id="name"
-                                        required
-                                        placeholder="Nama"
-                                        type="text"
-                                        autoComplete="off"
-                                    />
-                                </div>
-                                <div className="col-sm-6">
-                                    <input
-                                        className="con-field"
-                                        name="messageForm"
-                                        required
-                                        id="messageForm"
-                                        placeholder="Subjek"
-                                        type="text"
-                                        autoComplete="off"
-                                    />
-                                </div>
-                                <div className="col-sm-6">
-                                    <input
-                                        className="con-field"
-                                        name="phone"
-                                        required
-                                        id="phone"
-                                        placeholder="No Hp"
-                                        type="tel"
-                                        autoComplete="off"
-                                    />
-                                </div>
-                                <div className="col-sm-6">
-                                    <input
-                                        className="con-field"
-                                        name="email"
-                                        required
-                                        id="email"
-                                        placeholder="Email"
-                                        type="email"
-                                        autoComplete="off"
-                                    />
-                                </div>
-                            </div>
-                            <div className="row">
-                                <div className="col-sm-12">
-                                    <textarea
-                                        className="con-field"
-                                        name="message"
-                                        id="message"
-                                        rows="6"
-                                        placeholder="Pesan Anda"
-                                        required
-                                        autoComplete="off"
-                                    ></textarea>
-                                    <div className="submit-area">
-                                        <button
-                                            className="btn-one"
-                                            onClick={showSwal}
-                                        >
-                                            Kirim Pesan
-                                        </button>
+                                <div className="col-md-12">
+                                    <div className="">
+                                        <p>
+                                            <i className="fa fa-home text-theme"></i>{" "}
+                                            {kontakKamiList?.alamat}
+                                        </p>
+                                        <p>
+                                            <i className="fa fa-clock-o text-theme"></i>{" "}
+                                            {kontakKamiList?.jam_kerja}
+                                        </p>
+                                        <p>
+                                            <i className="fa fa-phone text-theme"></i>{" "}
+                                            <a
+                                                href={`tel:${kontakKamiList?.no_telp}`}
+                                            >
+                                                {kontakKamiList?.no_telp}
+                                            </a>{" "}
+                                        </p>
+                                        <p>
+                                            <i className="fa fa-whatsapp text-theme"></i>{" "}
+                                            <a
+                                                href={`https://wa.me/${kontakKamiList?.link_no_wa}/?text=Hi%2C%20Saya%20memerlukan%20bantuan%20untuk%20pemeliharaan%20listrik%20simetric.com`}
+                                                target="_blank"
+                                            >
+                                                {kontakKamiList?.no_wa}
+                                            </a>{" "}
+                                        </p>
+                                        <p>
+                                            <i className="fa fa-envelope text-theme"></i>{" "}
+                                            <a
+                                                href={`mailto:${kontakKamiList?.email}`}
+                                            >
+                                                {kontakKamiList?.email}
+                                            </a>
+                                        </p>
+                                        <hr />
+                                        <div className="single-section">
+                                            <h4 className="text-theme">
+                                                Pembayaran :
+                                            </h4>
+                                            <ul>
+                                                {pembayaranList?.map(
+                                                    (item, x) => (
+                                                        <li key={item?.id || x}>
+                                                            <img
+                                                                src={
+                                                                    item?.image
+                                                                }
+                                                                width={150}
+                                                            />
+                                                            <br />
+                                                            No Rek :{" "}
+                                                            <b className="text-theme">
+                                                                {item?.no_rek}
+                                                            </b>{" "}
+                                                            {" a/n "}
+                                                            {
+                                                                item?.nama_rek
+                                                            }{" "}
+                                                            <b
+                                                                onClick={() =>
+                                                                    copyToClipBoard(
+                                                                        item?.no_rek
+                                                                    )
+                                                                }
+                                                                onMouseOut={
+                                                                    mouseOut
+                                                                }
+                                                                className="text-theme cursor-pointer"
+                                                            >
+                                                                {copySuccess}
+                                                            </b>
+                                                        </li>
+                                                    )
+                                                )}
+                                            </ul>
+                                        </div>
+                                        <div></div>
                                     </div>
                                 </div>
                             </div>
@@ -125,7 +154,7 @@ export default function Index() {
                                 allowFullScreen
                                 loading="lazy"
                             ></iframe>
-                            <div className="map-content">
+                            {/* <div className="map-content">
                                 <ul>
                                     <li>
                                         <i className="fa fa-home"></i>
@@ -162,7 +191,7 @@ export default function Index() {
                                         ,
                                     </li>
                                 </ul>
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                 </div>

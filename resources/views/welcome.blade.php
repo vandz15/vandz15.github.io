@@ -3,9 +3,9 @@
 
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Sinergy Mechanic Electrical</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <meta content="Sinergy Mechanic Electrical" property="og:title" />
   <meta content="Sinergy Mechanic Electrical ialah Teknisi Listrik / Tukang Listrik Panggilan yg melayani jasa perbaikan Listrik untuk Rumah, Ruko, Kantor, &amp; Industri." property="og:description" />

@@ -29,7 +29,7 @@ export default function Index() {
                         <div
                             className="item"
                             key={item?.id || x}
-                            data-aos="slide-right"
+                            data-aos="flip-right"
                             data-aos-delay="0"
                         >
                             <div className="testimonials-inner">

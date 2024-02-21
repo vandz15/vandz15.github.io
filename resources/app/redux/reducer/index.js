@@ -11,6 +11,9 @@ import { callToActionReducer } from "@/redux/reducer/callToAction/reducer";
 import { testimoniReducer } from "@/redux/reducer/testimoni/reducer";
 import { kontakKamiReducer } from "@/redux/reducer/kontakKami/reducer";
 import { floatingWhatsAppReducer } from "@/redux/reducer/floatingWhatsApp/reducer";
+import { timKamiReducer } from "@/redux/reducer/timKami/reducer";
+import { pembayaranReducer } from "@/redux/reducer/pembayaran/reducer";
+import { galeriReducer } from "@/redux/reducer/galeri/reducer";
 
 // Combine semua reducers menjadi satu
 const rootReducer = combineReducers({
@@ -24,6 +27,9 @@ const rootReducer = combineReducers({
     testimoni: testimoniReducer,
     kontakKami: kontakKamiReducer,
     floatingWhatsApp: floatingWhatsAppReducer,
+    timKami: timKamiReducer,
+    pembayaran: pembayaranReducer,
+    galeri: galeriReducer,
 });
 
 export default rootReducer;

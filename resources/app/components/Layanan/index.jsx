@@ -28,13 +28,7 @@ export default function Index() {
                     {layananList?.slice(0, 9).map((item, x) => (
                         <div
                             className="col-md-4 col-sm-6"
-                            data-aos={
-                                x % 3 === 0
-                                    ? "slide-right"
-                                    : x % 3 === 1
-                                    ? "slide-up"
-                                    : "slide-left"
-                            }
+                            data-aos="flip-right"
                             data-aos-delay="0"
                             key={item?.id || x}
                         >
@@ -56,9 +50,7 @@ export default function Index() {
                     {layananList?.slice(9).map((item, x) => (
                         <div
                             className="col-md-4 col-sm-6"
-                            data-aos={
-                                x % 2 === 0 ? "slide-right" : "slide-left"
-                            }
+                            data-aos="flip-right"
                             data-aos-delay="0"
                             key={item?.id || x}
                         >

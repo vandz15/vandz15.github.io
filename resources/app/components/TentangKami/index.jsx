@@ -45,22 +45,22 @@ export default function Index() {
                             />
                         </div>
                     </div>
-                    <div
-                        className="col-sm-6"
-                        data-aos="slide-left"
-                        data-aos-delay="0"
-                    >
+                    <div className="col-sm-6">
                         <div className="about-text">
                             <p
                                 dangerouslySetInnerHTML={{
                                     __html: tentangKamiList?.description,
                                 }}
+                                data-aos="slide-left"
+                                data-aos-delay="0"
                             ></p>
                             <ul className="about-list hidden-sm">
                                 {layananList?.map((item, x) => (
                                     <li
                                         key={item?.id || x}
                                         className="nav navbar-nav"
+                                        data-aos="flip-right"
+                                        data-aos-delay="0"
                                     >
                                         <a
                                             href="#services"

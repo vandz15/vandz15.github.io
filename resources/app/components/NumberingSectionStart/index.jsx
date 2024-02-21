@@ -29,13 +29,9 @@ export default function Index() {
         <section className="numbering-wrapper">
             <div className="container">
                 <div className="row">
-                    <div
-                        className="col-sm-12 col-md-6"
-                        data-aos="slide-right"
-                        data-aos-delay="0"
-                    >
+                    <div className="col-sm-12 col-md-6">
                         <div className="number-services">
-                            <h3>
+                            <h3 data-aos="slide-right" data-aos-delay="0">
                                 <span className="size">
                                     {numberLayananList?.tahun_pengalaman}
                                 </span>
@@ -44,12 +40,20 @@ export default function Index() {
                                     <span className="big-text">Pengalaman</span>
                                 </span>
                             </h3>
-                            <p className="line">
+                            <p
+                                className="line"
+                                data-aos="slide-right"
+                                data-aos-delay="0"
+                            >
                                 {numberLayananList?.description_pengalaman}
                             </p>
                             <div className="row">
                                 <div className="col-sm-4">
-                                    <div className="single-section">
+                                    <div
+                                        className="single-section"
+                                        data-aos="flip-right"
+                                        data-aos-delay="0"
+                                    >
                                         <i
                                             className="fa fa-certificate"
                                             aria-hidden="true"
@@ -63,7 +67,11 @@ export default function Index() {
                                     </div>
                                 </div>
                                 <div className="col-sm-4">
-                                    <div className="single-section">
+                                    <div
+                                        className="single-section"
+                                        data-aos="flip-right"
+                                        data-aos-delay="0"
+                                    >
                                         <i
                                             className="fa fa-clock-o"
                                             aria-hidden="true"
@@ -77,7 +85,11 @@ export default function Index() {
                                     </div>
                                 </div>
                                 <div className="col-sm-4">
-                                    <div className="single-section">
+                                    <div
+                                        className="single-section"
+                                        data-aos="flip-right"
+                                        data-aos-delay="0"
+                                    >
                                         <i
                                             className="fa fa-money"
                                             aria-hidden="true"
@@ -93,11 +105,7 @@ export default function Index() {
                             </div>
                         </div>
                     </div>
-                    <div
-                        className="col-sm-12 col-md-6"
-                        data-aos="slide-left"
-                        data-aos-delay="0"
-                    >
+                    <div className="col-sm-12 col-md-6">
                         <div className="row">
                             <div className="col-sm-12">
                                 <div className="section-title">
@@ -108,7 +116,11 @@ export default function Index() {
                         <div className="row">
                             {areaLayananList?.slice(0, 3).map((item, x) => (
                                 <div className="col-sm-4" key={item?.id || x}>
-                                    <div className="counter">
+                                    <div
+                                        className="counter"
+                                        data-aos="flip-right"
+                                        data-aos-delay="0"
+                                    >
                                         <div className="icon">
                                             <span className="lnr lnr-location"></span>
                                         </div>
@@ -127,7 +139,11 @@ export default function Index() {
                         <div className="d-flex justify-content-center row">
                             {areaLayananList?.slice(3, 5).map((item, x) => (
                                 <div className="col-sm-4" key={item?.id || x}>
-                                    <div className="counter">
+                                    <div
+                                        className="counter"
+                                        data-aos="flip-right"
+                                        data-aos-delay="0"
+                                    >
                                         <div className="icon">
                                             <span className="lnr lnr-location"></span>
                                         </div>

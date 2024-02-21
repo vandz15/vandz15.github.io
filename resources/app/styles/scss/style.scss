@@ -1379,6 +1379,7 @@ footer p {
     background: #f47629;
   }
 
+
   .navbar-default .navbar-nav li a {
     font-size: 12px;
     padding: 27px 10px;
@@ -1639,4 +1640,31 @@ footer p {
 }
 .styles-module_statusSubtitle__esavW {
   font-size: 1.5rem !important;
+}
+
+.bg-none {
+  background: none;
+}
+.box-shadow-none {
+  box-shadow: none;
+}
+.p-0 {
+  padding: 0;
+}
+.mt-0 {
+  margin-top: 0;
+}
+.cursor-pointer {
+  cursor: pointer;
+}
+
+@media (max-width: 767px) {
+  .navbar-toggle {
+    float: initial!important;
+    position: absolute;
+    left: 42%;
+  }
+  // .navbar-default .navbar-brand {
+  //   width: 85%; //60%;
+  // }
 }
