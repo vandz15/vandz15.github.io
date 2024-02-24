@@ -14,16 +14,16 @@ import Footer from "@/components/Footer";
 import { FloatingWhatsApp } from "react-floating-whatsapp";
 
 import { useSelector, useDispatch } from "react-redux";
-import { getListFloatingWhatsApp } from "@/redux/action/floatingWhatsApp/creator";
+import { getListFloatingWhatsapp } from "@/redux/action/floatingWhatsapp/creator";
 
 export default function Index() {
     const floatingWhatsAppList = useSelector(
-        (state) => state.floatingWhatsApp.floatingWhatsAppList
+        (state) => state.floatingWhatsapp.floatingWhatsappList
     );
     const dispatch = useDispatch();
 
     const fetchFloatingWhatsApp = async () => {
-        dispatch(getListFloatingWhatsApp());
+        dispatch(getListFloatingWhatsapp());
     };
 
     useEffect(() => {

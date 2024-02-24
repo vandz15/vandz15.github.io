@@ -1,19 +1,19 @@
-import { actionType } from "@/redux/action/floatingWhatsApp/type";
+import { actionType } from "@/redux/action/floatingWhatsapp/type";
 
 // Data Json
-import DataFloatingWhatsApp from "./data-floating-whatsApp.json";
+import DataFloatingWhatsapp from "./data-floating-whatsapp.json";
 
 // Read
-export const getListFloatingWhatsApp = () => {
+export const getListFloatingWhatsapp = () => {
     return (dispatch) => {
-        return dispatch(saveListFloatingWhatsApp(DataFloatingWhatsApp[0]));
+        return dispatch(saveListFloatingWhatsapp(DataFloatingWhatsapp[0]));
     };
 };
 
 // Read
-export const saveListFloatingWhatsApp = (payload) => {
+export const saveListFloatingWhatsapp = (payload) => {
     return {
-        type: actionType.loadFloatingWhatsApp,
+        type: actionType.loadFloatingWhatsapp,
         payload: payload,
     };
 };

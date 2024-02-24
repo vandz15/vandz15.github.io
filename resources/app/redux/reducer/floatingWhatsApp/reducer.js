@@ -1,20 +1,20 @@
-import { initialState } from "@/redux/action/floatingWhatsApp/state";
-import { actionType } from "@/redux/action/floatingWhatsApp/type";
+import { initialState } from "@/redux/action/floatingWhatsapp/state";
+import { actionType } from "@/redux/action/floatingWhatsapp/type";
 
-export const floatingWhatsAppReducer = (state = initialState, action) => {
+export const floatingWhatsappReducer = (state = initialState, action) => {
     switch (action.type) {
         // Read
-        case actionType.loadFloatingWhatsApp:
+        case actionType.loadFloatingWhatsapp:
             state = {
                 ...state,
-                floatingWhatsAppList: action.payload,
+                floatingWhatsappList: action.payload,
             };
             return state;
-        case actionType.loadFloatingWhatsAppResetData:
+        case actionType.loadFloatingWhatsappResetData:
             return initialState;
         default:
             return state;
     }
 };
 
-export default floatingWhatsAppReducer;
+export default floatingWhatsappReducer;

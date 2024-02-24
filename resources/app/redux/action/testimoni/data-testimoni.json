@@ -4,47 +4,23 @@
     "image": "/assets/images/testimonials1.png",
     "alt": "Sinergy Mechanical Electrical",
     "nama": "Michal Marek",
-    "position": "Sales Manager",
-    "description": "Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur,pisci velit, sed quia non numquam eius modi tmpora incidunt ut labore et dolore magnam aliquam quaerat sectetur isci sed quia non numquam eius modi."
+    "position": "Pelanggan SiMeTric",
+    "description": "Recommanded banget nih Berkah Listrik. McB pembagi dalam rumah sering turun, tapi setelah makai jasa teknisi dari Sahabat Teknik MCB pembagi dalam rumah kami aman. Harganya juga sangat murah, Bergaransi juga wkwk."
   },
   {
     "id": 2,
     "image": "/assets/images/testimonials2.png",
     "alt": "Sinergy Mechanical Electrical",
     "nama": "Michal Marek",
-    "position": "Produk Manager",
-    "description": "Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur,pisci velit, sed quia non numquam eius modi tmpora incidunt ut labore et dolore magnam aliquam quaerat sectetur isci sed quia non numquam eius modi."
+    "position": "Pelanggan SiMeTric",
+    "description": "Saya mengira pengerjaan instalasi 1 jalur di rumah saya akan memakan waktu hingga 1 hari,tenyata sekitar 5 jam’an saja sudah rapih dan normal kembali,kembali hingga saat ini pun tidak bermasalah lagi.good job deh…."
   },
   {
     "id": 3,
     "image": "/assets/images/testimonials3.png",
     "alt": "Sinergy Mechanical Electrical",
     "nama": "Michal Marek",
-    "position": "Project Manager",
-    "description": "Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur,pisci velit, sed quia non numquam eius modi tmpora incidunt ut labore et dolore magnam aliquam quaerat sectetur isci sed quia non numquam eius modi."
-  },
-  {
-    "id": 4,
-    "image": "/assets/images/testimonials1.png",
-    "alt": "Sinergy Mechanical Electrical",
-    "nama": "Michal Marek",
-    "position": "Sales Manager",
-    "description": "Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur,pisci velit, sed quia non numquam eius modi tmpora incidunt ut labore et dolore magnam aliquam quaerat sectetur isci sed quia non numquam eius modi."
-  },
-  {
-    "id": 5,
-    "image": "/assets/images/testimonials2.png",
-    "alt": "Sinergy Mechanical Electrical",
-    "nama": "Michal Marek",
-    "position": "Sales Manager",
-    "description": "Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur,pisci velit, sed quia non numquam eius modi tmpora incidunt ut labore et dolore magnam aliquam quaerat sectetur isci sed quia non numquam eius modi."
-  },
-  {
-    "id": 6,
-    "image": "/assets/images/testimonials3.png",
-    "alt": "Sinergy Mechanical Electrical",
-    "nama": "Michal Marek",
-    "position": "Sales Manager",
+    "position": "Pelanggan SiMeTric",
     "description": "Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur,pisci velit, sed quia non numquam eius modi tmpora incidunt ut labore et dolore magnam aliquam quaerat sectetur isci sed quia non numquam eius modi."
   }
 ]

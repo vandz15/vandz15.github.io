@@ -58,7 +58,7 @@ export default function Index() {
                                             className="fa fa-certificate"
                                             aria-hidden="true"
                                         ></i>
-                                        <h3>Certification</h3>
+                                        <h3>Sertifikasi</h3>
                                         <p>
                                             {
                                                 numberLayananList?.certification_description
@@ -94,7 +94,7 @@ export default function Index() {
                                             className="fa fa-money"
                                             aria-hidden="true"
                                         ></i>
-                                        <h3>Harga Wajar</h3>
+                                        <h3>Harga Terjangkau</h3>
                                         <p>
                                             {
                                                 numberLayananList?.harga_wajar_description
