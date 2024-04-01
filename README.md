@@ -1,6 +1,6 @@
 ![result]()
 
-<b>Sinergy Mechanic Electrical</b><br>
+<b>Makanan Ringan</b><br>
 
 <hr>
 <p>
@@ -10,10 +10,8 @@
     <li>Lorem Ipsum</li>
 </ul>
 
-<p>Website ini dibuat menggunakan Framework Laravel v10.44.0 dengan tambahan package-package lain, seperti :<br><br>
-1) VITE v5.1.3,<br>
-2) Bootstrap v5,<br>
-3) Laraberg - Wordpress Gutenberg Editor
+<p>Website ini dibuat menggunakan Framework Laravel v10 dengan tambahan package-package lain, seperti :<br><br>
+1) VITE v5,<br>
 </p>
 
 Cara menjalankan Website :
