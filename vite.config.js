@@ -18,15 +18,7 @@ export default defineConfig((config) => {
             laravel({
                 input: [
                     // css
-                    "resources/app/styles//bootstrap/css/bootstrap.min.css",
-                    "resources/app/styles/linearicons/css/icon-font.min.css",
-                    "resources/app/styles/font-awesome/css/font-awesome.min.css",
-                    "resources/app/styles/animate/animate.css",
-                    "resources/app/styles/owl-carousel/css/owl.carousel.css",
-                    "resources/app/styles/owl-carousel/css/owl.theme.css",
                     "resources/app/styles/scss/style.scss",
-                    "resources/app/styles/scss/style.scss",
-                    "resources/app/index.jsx",
                 ],
                 refresh: true,
                 // @ts-ignore
@@ -34,6 +26,9 @@ export default defineConfig((config) => {
             }),
             react(),
         ],
+        server: {
+            port: 8000,
+        },
         commonjsOptions: {
             esmExternals: true,
         },

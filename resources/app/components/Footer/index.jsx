@@ -1,12 +1,11 @@
 export default function Index() {
     return (
         <footer>
-            <div className="container">
-                <p>
-                    &copy; Copyright 2024, Sinergy Mechanic Electrical | All
-                    Rights Reserved.
-                </p>
-            </div>
+            <h3>Beli Sebelum Kehabisan!</h3>
+            <p> Makanan enak buat mood kamu makin baik.</p>
+            <p className="copyright-text">
+                <small>&copy; Copyright 2024 VandZ15</small>
+            </p>
         </footer>
     );
 }

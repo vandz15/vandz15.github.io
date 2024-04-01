@@ -1,0 +1,95 @@
+[
+    {
+        "name": "Delfi Chic-Choc",
+        "varian": [
+            {
+                "id": 1,
+                "jumlah": 250,
+                "nama_berat": "gr",
+                "harga": 43000
+            },
+            {
+                "id": 2,
+                "jumlah": 500,
+                "nama_berat": "gr",
+                "harga": 83000
+            },
+            {
+                "id": 3,
+                "jumlah": 1,
+                "nama_berat": "kg",
+                "harga": 143000
+            }
+        ],
+        "link_wa": 6281228883616,
+        "link_shopee": "https://shope.ee/7fCfxKZyvy",
+        "images": "../../assets/images/product/delfi-chicchoc.webp",
+        "kategori": "cokelat"
+    },
+    {
+        "name": "Delfi Maltitos",
+        "varian": [
+            {
+                "id": 1,
+                "jumlah": 500,
+                "nama_berat": "gr",
+                "harga": 93000
+            }
+        ],
+        "link_wa": 6281228883616,
+        "link_shopee": "https://shope.ee/3AkGpqq8FG",
+        "images": "../../assets/images/product/delfi-maltitos.jpeg",
+        "kategori": "cokelat"
+    },
+    {
+        "name": "Delfi Almond",
+        "varian": [
+            {
+                "id": 1,
+                "jumlah": 500,
+                "nama_berat": "gr",
+                "harga": 96000
+            }
+        ],
+        "link_wa": 6281228883616,
+        "link_shopee": "https://shope.ee/3AkGpqq8FG",
+        "images": "../../assets/images/product/delfi-almond.jpeg",
+        "kategori": "cokelat"
+    },
+    {
+        "name": "Delfi Cha-cha peanut/choco",
+        "varian": [
+            {
+                "id": 1,
+                "jumlah": 500,
+                "nama_berat": "gr",
+                "harga": 96000
+            }
+        ],
+        "link_wa": 6281228883616,
+        "link_shopee": null,
+        "images": "../../assets/images/product/cha-cha.jpeg",
+        "kategori": "cokelat"
+    },
+    {
+        "name": "Kacang Aroma",
+        "varian": [
+            {
+                "id": 1,
+                "jumlah": 500,
+                "nama_berat": "gr",
+                "harga": 60000
+            },
+            {
+                "id": 2,
+                "jumlah": 1,
+                "nama_berat": "kg",
+                "harga": 103000
+            }
+        ],
+        "link_wa": 6281228883616,
+        "link_shopee": null,
+        "images": "../../assets/images/product/kacang-aroma.jpeg",
+        "kategori": "kacang"
+    }
+]

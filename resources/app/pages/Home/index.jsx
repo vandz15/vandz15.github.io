@@ -1,109 +1,121 @@
-import React, { Fragment, useEffect } from "react";
+import React, { Fragment, useEffect, useState, useRef } from "react";
 
-import Header from "@/components/Header";
-import NumberingSectionStart from "@/components/NumberingSectionStart";
-import TentangKami from "@/components/TentangKami";
-import TimKami from "@/components/TimKami";
-import Layanan from "@/components/Layanan";
-import CallToAction from "@/components/CallToAction";
-import Testimoni from "@/components/Testimoni";
-import Galeri from "@/components/Galeri";
-import KontakKami from "@/components/KontakKami";
+import Navbar from "@/components/Navbar";
+import SearchBar from "@/components/SearchBar";
+import SearchResults from "@/components/SearchResults";
+import ProductList from "@/components/ProductList";
 import Footer from "@/components/Footer";
 
 import { FloatingWhatsApp } from "react-floating-whatsapp";
 
 import { useSelector, useDispatch } from "react-redux";
 import { getListFloatingWhatsapp } from "@/redux/action/floatingWhatsapp/creator";
+import { getListProducts } from "@/redux/action/products/creator";
 
 export default function Index() {
+    const searchResultsRef = useRef();
+    const [query, setQuery] = useState("");
+    const [filteredProducts, setFilteredProducts] = useState([]);
+    const [isLoading, setIsLoading] = useState(false);
+
+    const mainContent = useRef(null);
+
+    const handleScrollDown = () => {
+        const html = document.querySelector("html");
+        html.classList.add("scroll-smooth");
+        mainContent.current?.scrollIntoView();
+        html.classList.remove("scroll-smooth");
+    };
+
     const floatingWhatsAppList = useSelector(
         (state) => state.floatingWhatsapp.floatingWhatsappList
     );
+    const productList = useSelector((state) => state.products.productsList);
     const dispatch = useDispatch();
 
     const fetchFloatingWhatsApp = async () => {
         dispatch(getListFloatingWhatsapp());
     };
 
+    const fetchProducts = async () => {
+        dispatch(getListProducts());
+    };
+
+    const handleSearch = async (e) => {
+        setQuery(e?.target?.value);
+        setFilteredProducts([]);
+    };
+
+    const handleSubmit = async (event) => {
+        event.preventDefault();
+        setIsLoading(true);
+        setTimeout(() => {
+            const filteredList = productList.filter((product) =>
+                product.name
+                    .replace(/[-/]/g, "")
+                    .toLowerCase()
+                    .includes(query.replace(/[-/]/g, "").toLowerCase())
+            );
+            setFilteredProducts(filteredList);
+
+            if (query && filteredList) {
+                const offsetTop = searchResultsRef?.current?.offsetTop;
+                window.scrollTo({ top: offsetTop, behavior: "smooth" });
+            }
+            setIsLoading(false);
+        }, 2000);
+    };
+
     useEffect(() => {
         fetchFloatingWhatsApp();
-        const loadScripts = async () => {
-            // Memuat jQuery secara asinkron
-            const jqueryScript = document.createElement("script");
-            jqueryScript.src = "assets/jquery/jquery-3.1.1.min.js";
-            jqueryScript.async = true;
-
-            // Menunggu jQuery dimuat
-            await new Promise((resolve, reject) => {
-                jqueryScript.onload = resolve;
-                jqueryScript.onerror = reject;
-                document.body.appendChild(jqueryScript);
-            });
-
-            // Memuat skrip Bootstrap
-            const bootstrapScript = document.createElement("script");
-            bootstrapScript.src = "assets/bootstrap/js/bootstrap.min.js";
-            bootstrapScript.async = true;
-
-            // Menunggu Bootstrap dimuat
-            await new Promise((resolve, reject) => {
-                bootstrapScript.onload = resolve;
-                bootstrapScript.onerror = reject;
-                document.body.appendChild(bootstrapScript);
-            });
-
-            // Memuat skrip Owl Carousel
-            const owlCarouselScript = document.createElement("script");
-            owlCarouselScript.src = "assets/owl-carousel/js/owl.carousel.js";
-            owlCarouselScript.async = true;
-
-            // Menunggu Owl Carousel dimuat
-            await new Promise((resolve, reject) => {
-                owlCarouselScript.onload = resolve;
-                owlCarouselScript.onerror = reject;
-                document.body.appendChild(owlCarouselScript);
-            });
-
-            // Setelah semua skrip dimuat, memuat skrip lainnya
-            const otherScripts = [
-                "assets/easing/jquery.easing.min.js",
-                "assets/jquery/jquery.animateNumber.min.js",
-                "assets/jquery/plugins.js",
-                "assets/js/custom.js",
-            ];
-
-            otherScripts.forEach((src) => {
-                const script = document.createElement("script");
-                script.src = src;
-                script.async = true;
-                document.body.appendChild(script);
-            });
-        };
-
-        loadScripts();
-
-        // Membersihkan elemen script ketika komponen tidak lagi digunakan
-        return () => {
-            document.querySelectorAll("script").forEach((script) => {
-                script.remove();
-            });
-        };
+        fetchProducts();
     }, []);
 
     return (
         <Fragment>
-            <Header />
-            <NumberingSectionStart />
-            <TentangKami />
-            <TimKami />
-            <Layanan />
-            <CallToAction />
-            <Testimoni />
-            <Galeri />
-            <KontakKami />
-            <Footer />
+            <Navbar />
+            <section className="hero">
+                <div className="container">
+                    <h1>
+                        Bingung mau ngemil apa?
+                        <br />
+                        Cari aja disini!
+                    </h1>
+                    <SearchBar
+                        value={query ? query : ""}
+                        onChange={(e) => handleSearch(e)}
+                        onSubmit={handleSubmit}
+                    />
+                    {isLoading && (
+                        <div>
+                            {" "}
+                            <p>Tunggu sebentar...</p>
+                        </div>
+                    )}
+                    <div
+                        className="mouse-scroll-anim"
+                        onClick={handleScrollDown}
+                    ></div>
+                </div>
+            </section>
+            {/* Kontent - Hasil pencarian cemilan */}
+            {query && (
+                <SearchResults
+                    keyword={query}
+                    isLoading={isLoading}
+                    productList={filteredProducts}
+                    searchResultsRef={searchResultsRef}
+                />
+            )}
+            {/* Kontent - Cemilan untukmu hari ini */}
 
+            <section className="recipes recipes-today" ref={mainContent}>
+                <div className="container">
+                    <h2 className="heading-2">Ngemil untukmu hari ini</h2>
+                    <ProductList product={productList} />
+                </div>
+            </section>
+            <Footer />
             <FloatingWhatsApp
                 avatar={floatingWhatsAppList?.avatar}
                 phoneNumber={floatingWhatsAppList?.phone_number}
