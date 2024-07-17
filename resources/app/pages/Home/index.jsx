@@ -74,7 +74,8 @@ export default function Index() {
     return (
         <Fragment>
             <Navbar />
-            <section className="hero">
+            <section className="hero" 
+            style={{ backgroundImage: `url('/assets/images/bg-hero.png')` }}>
                 <div className="container">
                     <h1>
                         Bingung mau ngemil apa?

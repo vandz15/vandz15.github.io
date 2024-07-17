@@ -11,6 +11,7 @@ export default defineConfig((config) => {
     const env = loadEnv(config.mode, process.cwd(), "");
 
     return {
+        base: 'https://github.com/vandz15/vandz15.github.io.git',
         define: {
             __APP_ENV__: JSON.stringify(env.APP_ENV),
         },
