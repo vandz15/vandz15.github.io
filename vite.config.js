@@ -12,7 +12,8 @@ export default defineConfig((config) => {
 
     return {
         build: {
-            outDir: 'public/build', // Laravel's public directory
+            outDir: 'dist',
+            // other build configurations as needed
           },
         define: {
             __APP_ENV__: JSON.stringify(env.APP_ENV),
