@@ -27,6 +27,7 @@ export default defineConfig((config) => {
             react(),
         ],
         server: {
+            host: 'localhost',
             port: 8000,
         },
         commonjsOptions: {
