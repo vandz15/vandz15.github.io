@@ -6,19 +6,22 @@
                 "id": 1,
                 "jumlah": 250,
                 "nama_berat": "gr",
-                "harga": 43000
+                "harga": 43000,
+                "stok": 0
             },
             {
                 "id": 2,
                 "jumlah": 500,
                 "nama_berat": "gr",
-                "harga": 83000
+                "harga": 83000,
+                "stok": 0
             },
             {
                 "id": 3,
                 "jumlah": 1,
                 "nama_berat": "kg",
-                "harga": 143000
+                "harga": 143000,
+                "stok": 0
             }
         ],
         "link_wa": 6281228883616,
@@ -33,7 +36,8 @@
                 "id": 1,
                 "jumlah": 500,
                 "nama_berat": "gr",
-                "harga": 93000
+                "harga": 93000,
+                "stok": 0
             }
         ],
         "link_wa": 6281228883616,
@@ -48,7 +52,8 @@
                 "id": 1,
                 "jumlah": 500,
                 "nama_berat": "gr",
-                "harga": 96000
+                "harga": 96000,
+                "stok": 0
             }
         ],
         "link_wa": 6281228883616,
@@ -63,7 +68,8 @@
                 "id": 1,
                 "jumlah": 500,
                 "nama_berat": "gr",
-                "harga": 96000
+                "harga": 96000,
+                "stok": 0
             }
         ],
         "link_wa": 6281228883616,
@@ -78,13 +84,15 @@
                 "id": 1,
                 "jumlah": 500,
                 "nama_berat": "gr",
-                "harga": 60000
+                "harga": 60000,
+                "stok": 0
             },
             {
                 "id": 2,
                 "jumlah": 1,
                 "nama_berat": "kg",
-                "harga": 103000
+                "harga": 103000,
+                "stok": 0
             }
         ],
         "link_wa": 6281228883616,

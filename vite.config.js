@@ -33,6 +33,7 @@ export default defineConfig((config) => {
             host: 'localhost',
             port: 8000,
         },
+        base: '/',
         commonjsOptions: {
             esmExternals: true,
         },

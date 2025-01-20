@@ -14,8 +14,11 @@ const ProductCard = ({ product }) => {
     return (
         <li>
             <div className="recipe recipe-card">
-                <img src={product?.images} alt="" />
-                <div className="recipe-body">
+                <img src={product?.images} alt="" 
+                className={`${product?.varian?.every((v) => v?.stok === 0) ? "out-of-stock" : ""}`} />
+                <div className={`recipe-body ${product?.varian?.every((v) => v?.stok === 0)
+                            ? "out-of-stock"
+                            : ""}`}>
                     <div>
                         <h2 className="text-primary">
                             <small>Rp</small>{" "}
@@ -52,11 +55,16 @@ const ProductCard = ({ product }) => {
                             </div>
 
                             <div className="recipe-info">
-                                {product?.varian?.map((varian, idx) => (
+                                {product?.varian
+                                ?.map((varian, idx) => (
                                     <div
-                                        className="icon-group"
+                                        className={`icon-group ${
+                                            varian?.stok === 0 ? "disabled" : ""
+                                        }`}
                                         key={idx || varian}
-                                        onClick={() => handleVarian(varian?.id)}
+                                        onClick={() =>
+                                            varian?.stok > 0 && handleVarian(varian?.id)
+                                        }
                                     >
                                         <span
                                             className={`badge badge-outline-primary ${
@@ -64,10 +72,12 @@ const ProductCard = ({ product }) => {
                                                 product?.varian?.length === 1
                                                     ? "active"
                                                     : ""
+                                            } ${
+                                                varian?.stok === 0 ? "out-of-stock" : ""
                                             }`}
                                         >
-                                            {varian?.jumlah}{" "}
-                                            {varian?.nama_berat}
+                                            {varian?.jumlah} {varian?.nama_berat}
+                                            {varian?.stok === 0 && ""}
                                         </span>
                                     </div>
                                 ))}
@@ -103,13 +113,14 @@ const ProductCard = ({ product }) => {
                             )
                         }
                         disabled={
-                            product?.varian?.length === 1 || varians !== null
-                                ? false
-                                : true
+                            (product?.varian?.length > 1 && varians === null) || 
+                            product?.varian?.every((v) => v?.stok === 0) // Tidak ada stok
                         }
                     >
-                        {product?.varian?.length === 1 || varians !== null
+                        {product?.varian?.length === 1 && product?.varian[0]?.stok > 0 || varians !== null
                             ? "Pesan via Whatsapp"
+                            : product?.varian?.every((v) => v?.stok === 0)
+                            ? "Stok Habis"
                             : "Pilih Varian (size)"}
                     </button>
                     {product?.link_shopee && (
@@ -120,8 +131,16 @@ const ProductCard = ({ product }) => {
                                 window.open(product?.link_shopee, "_blank")
                             }
                             target="_blank"
+                            disabled={
+                                (product?.varian?.length > 1 && varians === null) || 
+                                product?.varian?.every((v) => v?.stok === 0) // Tidak ada stok
+                            }
                         >
-                            Pesan via Shopee
+                            {product?.varian?.length === 1 && product?.varian[0]?.stok > 0 || varians !== null
+                            ? "Pesan via Shopee"
+                            : product?.varian?.every((v) => v?.stok === 0)
+                            ? "Stok Habis"
+                            : "Pilih Varian (size)"}
                         </button>
                     )}
                 </div>
